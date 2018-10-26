@@ -38,7 +38,7 @@ var server = http.createServer(function(request, response){
     response.setHeader('Content-Type','application/javascript')
     response.write(string)
     reponse.end()
-  }else if(path === '/pay' && method.toUpperCase()==='POST'){
+  }else if(path === '/pay' && method.toUpperCase()==='GET'){
     var amount = fs.readFileSync('./db','utf8') // 读取数据是多少 100
     var newAmount = amount - 1 // 得到新的数据
     fs.writeFileSync('./db',newAmount) // 写入新的数据
